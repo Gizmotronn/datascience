@@ -1,0 +1,54 @@
+---
+layout: body
+---
+
+  {% include header.html site=site page=page image=site.header.background_img %}
+
+  <div id="content" class="site-content">
+    <main id="main" class="site-main inner">
+
+      <div class="post-feed">
+        {% assign display_posts = '/posts' | get_pages | sort: 'date' | reverse %}
+        {% for post in display_posts %}
+        <article class="post">
+          <header class="post-header">
+            <h2 class="post-title"><a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.title }}</a></h2>
+            <div class="post-meta">
+              Published on <time class="published"
+                datetime="{{ post.date | date: '%Y-%m-%d %H:%M' }}">{{ post.date | date: '%B %d, %Y' }}</time>
+            </div>
+          </header><!-- .post-header -->
+          {% assign thumb_img_path_is_not_empty = post.thumb_img_path | is_not_empty %}
+          {% if thumb_img_path_is_not_empty %}
+          <a class="post-thumbnail" href="{{ post.url | relative_url }}">
+            <img class="thumbnail" src="{{ post.thumb_img_path | relative_url }}" alt="{{ post.title }}" />
+          </a>
+          {% endif %}
+          <div class="post-content">
+            <p>{{ post.excerpt }}</p>
+          </div><!-- .post-content -->
+          {% if page.has_more_link == true and page.more_link_text %}
+          <p class="read-more">
+            <a class="read-more-link" href="{{ post.url | relative_url }}">{{ page.more_link_text }} <span class="icon-arrow-right" aria-hidden="true"></span></a>
+          </p>
+          {% endif %}
+        </article><!-- .post -->
+        {% endfor %}
+      </div><!-- .post-feed -->
+
+      <!-- Pagination TBD -->
+      <!--
+      <nav class="pagination">
+        <div class="nav-links">
+          <a class="older-posts button" href="#"><span class="icon-arrow-left" aria-hidden="true"></span><span class="screen-reader-text">Older posts</span></a>
+          <span class="page-number">Page X of Y</span>
+          <a class="newer-posts button" href="#"><span class="screen-reader-text">Newer posts</span><span class="icon-arrow-right" aria-hidden="true"></span></a>
+        </div>
+      </nav>
+      -->
+
+    </main><!-- .site-main -->
+
+    {% include footer.html %}
+
+  </div><!-- .site-content -->

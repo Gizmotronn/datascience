@@ -1,0 +1,61 @@
+---
+layout: body
+---
+
+  {% if page.hide_header == true %}
+    {% include header_alt.html %}
+  {% else %}
+    
+    {% include header.html site=site page=page image=page.content_img_path %}
+  {% endif %}
+
+  <div id="content" class="site-content">
+    <main id="main" class="site-main inner">
+
+      <article class="post post-full">
+        <header class="post-header">
+          <h1 class="post-title">{{ page.title }}</h1>
+          <div class="post-meta">
+            Published on <time class="published"
+              datetime="{{ page.date | date: '%Y-%m-%d %H:%M' }}">{{ page.date | date: '%B %d, %Y' }}</time>
+          </div>
+        </header><!-- .post-header -->
+        {% assign subtitle_is_not_empty = page.subtitle | is_not_empty %}
+        {% if subtitle_is_not_empty %}
+        <div class="post-subtitle">
+          {{ page.subtitle }}
+        </div><!-- .post-subtitle -->
+        {% endif %}
+        <div class="post-content">
+          {{ content }}
+        </div><!-- .post-content -->
+      </article><!-- .post -->
+
+      <!-- Next/previous post navigation TBD -->
+      <!--
+      <nav class="post-navigation">
+        <h2 class="post-nav-title">Read Next</h2>
+        <article class="post">
+          <header class="post-header">
+            <h3 class="post-title"><a href="#" rel="bookmark">Previous Post Title</a></h3>
+            <div class="post-meta">
+              Published on <time class="published" datetime="">Previous post date</time>
+            </div>
+          </header>
+        </article>
+        <article class="post">
+          <header class="post-header">
+            <h3 class="post-title"><a href="#" rel="bookmark">Next Post Title</a></h3>
+            <div class="post-meta">
+              Published on <time class="published" datetime="">Next post date</time>
+            </div>
+          </header>
+        </article>
+      </nav>
+      -->
+
+    </main><!-- .site-main -->
+
+    {% include footer.html %}
+
+  </div><!-- .site-content -->

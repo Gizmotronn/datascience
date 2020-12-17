@@ -1,0 +1,18 @@
+<div class="site-branding">
+  {% assign logo_img_is_not_empty = site.header.logo_img | is_not_empty %}
+  {% if logo_img_is_not_empty %}
+  <p class="site-logo">
+    <a href='{{ '/' | relative_url }}'><img src="{{ site.header.logo_img | relative_url }}"
+        alt="{{ site.header.title }} Logo" /></a>
+  </p>
+  {% endif %}
+  {% if page.layout == 'home' %}
+  <h1 class="site-title"><a href='{{ '/' | relative_url }}'>{{ site.header.title }}</a></h1>
+  {% else %}
+  <p class="site-title"><a href='{{ '/' | relative_url }}'>{{ site.header.title }}</a></p>
+  {% endif %}
+  {% assign tagline_is_not_empty = site.header.tagline | is_not_empty %}
+  {% if tagline_is_not_empty %}
+  <p class="site-description">{{ site.header.tagline }}</p>
+  {% endif %}
+</div><!-- .site-branding -->
