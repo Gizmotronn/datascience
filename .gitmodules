@@ -1,0 +1,3 @@
+[submodule "crud-api-django"]
+	path = crud-api-django
+	url = https://github.com/acord-robotics/crud-api-django
