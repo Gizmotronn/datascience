@@ -1,3 +1,9 @@
 [submodule "crud-api-django"]
 	path = crud-api-django
 	url = https://github.com/acord-robotics/crud-api-django
+[submodule "django-start"]
+	path = django-start
+	url = https://github.com/acord-robotics/django-start
+[submodule "cycliq-stuff"]
+	path = cycliq-stuff
+	url = https://github.com/acord-robotics/cycliq-stuff
