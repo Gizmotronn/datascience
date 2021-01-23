@@ -7,3 +7,6 @@
 [submodule "cycliq-stuff"]
 	path = cycliq-stuff
 	url = https://github.com/acord-robotics/cycliq-stuff
+[submodule "numpy-stuff/django-start"]
+	path = numpy-stuff/django-start
+	url = https://github.com/acord-robotics/django-start
