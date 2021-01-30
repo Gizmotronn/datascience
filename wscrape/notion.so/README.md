@@ -14,3 +14,15 @@ The notebooks 04-05 contain tasks to work on individually for each learner to ke
 - **Solution** `05_pipeline_solution.ipynb`
 
 Attempt to build out your individual pipeline by yourself and use the solution document only if you get stuck. All the best, and keep learning! :)
+
+# Practical Introduction
+[Notion](https://www.notion.so/skinetics/Practical-Introduction-6e3cc304fa9544cbb2b101ec626131a9)
+
+# Urllib
+```py
+from urllib.request import urlopen 
+url = https://olympus.realpython.org/profiles/aphrodite
+page = urlopen(url) # taking url variable as an argument/parameter
+```
+
+[File](https://github.com/acord-robotics/datascience/blob/main/wscrape/pi/main.py) -> `pi/main.py` inside this folder
