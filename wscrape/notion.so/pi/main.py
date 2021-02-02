@@ -1,8 +1,6 @@
 # Import modules & libraries
 from urllib.request import urlopen
 import re
-"""
-"""
 
 """Reg exes"""
 re.findall("ab*c", "ac", re.IGNORECASE) 
