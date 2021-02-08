@@ -1,5 +1,6 @@
 from datetime import datetime
 from app import db
+from werkzeug.security import generate_password_hash, check_password_hash
 
 class User(db.Model): # inherits from db => model,  a base class for all models from Flask-SQLAlchemy.
     id = db.Column(db.Integer, primary_key=True)
