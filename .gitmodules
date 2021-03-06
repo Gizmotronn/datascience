@@ -10,3 +10,6 @@
 [submodule "numpy-stuff/django-start"]
 	path = numpy-stuff/django-start
 	url = https://github.com/acord-robotics/django-start
+[submodule "flask/flask1"]
+	path = flask/flask1
+	url = https://github.com/signal-k/flask1
